@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}HomePage{% endblock title %}
+
+{% block content %}
+<h1 class="text-center mb-4">List of Images</h1>
+
+<div class="row gx-5">
+    {% for img in images %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            
+            <div class="card-body">
+                <h5 class="card-title">{{ img.user }}</h5>
+                <p class="card-text"><strong>Tags:</strong> {{ img.tags }}</p>
+                <p class="card-text"><strong>Likes:</strong> {{ img.likes }}</p>
+                <p class="card-text"><strong>Views:</strong> {{ img.views }}</p>
+                <p class="card-text"><strong>Comments:</strong> {{ img.comments }}</p>
+                <a href="{{ img.pageURL }}" class="btn btn-primary" target="_blank">View Image</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
